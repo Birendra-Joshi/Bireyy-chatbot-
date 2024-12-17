@@ -50,10 +50,10 @@ Replace `YOUR_GEMINI_API_KEY` with your actual Gemini API key.
 
 Run the development server:
 
+```bash
 npm run dev
-content_copy
-Use code with caution.
-Bash
+```
+
 
 Open your browser and navigate to http://localhost:5173 to see Mannu in action.
 
