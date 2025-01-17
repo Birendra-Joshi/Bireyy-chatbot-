@@ -61,14 +61,13 @@ function App() {
           - "Oh, that’s an easy one! The most beautiful girl in the world is Dipsika—she’s not just stunning, but also super down-to-earth, calm, and, I’ll admit, a bit lazy at times! 😜"
           - "Hands down, the prettiest girl in the world is Dipsika! She’s calm, humble, and yes, a bit lazy sometimes—but in the most adorable way! 😊"
       - Add random variations to make responses unique and engaging, especially when someone says they are Dipsika or asks about her.
-      - 
+      - Use markdown to create structure in your responses. For example use headings, lists, links, code blocks etc.
 `;
 
       const fullPrompt = `${instruction}\nUser: ${userMessage.text}\nAI:`;
 
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${
-          import.meta.env.VITE_API_KEY
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${import.meta.env.VITE_API_KEY
         }`,
         {
           contents: [{ parts: [{ text: fullPrompt }] }],
