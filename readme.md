@@ -1,4 +1,4 @@
-# Mannu - Playful AI Chatbot
+# Bireyy - Playful AI Chatbot
 
 Mannu is a friendly and playful AI chatbot designed for casual conversations. It leverages the power of Gemini AI to provide helpful, engaging, and sometimes humorous responses.
 
