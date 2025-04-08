@@ -43,7 +43,7 @@ export function ChatMessage({ message, isBot, className }: ChatMessageProps) {
                 {isBot ? <Bot className="w-5 h-5" /> : <User className="w-5 h-5" />}
             </div>
             <div className="flex-1 space-y-2">
-                <p className="text-sm font-medium">{isBot ? "Mannu" : "You"}</p>
+                <p className="text-sm font-medium">{isBot ? "Bireyy" : "You"}</p>
                 <div className="prose prose-neutral dark:prose-invert">
                     <MDXRemote 
                         {...mdxSource}
