@@ -16,7 +16,7 @@ interface Message {
 function App() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "Hello! I'm Mannu, your playful AI assistant. How can I make you laugh today?",
+      text: "Hello! I'm Bireyy, your playful AI assistant. How can I make you laugh today?",
       isBot: true,
       id: uuidv4(),
     },
