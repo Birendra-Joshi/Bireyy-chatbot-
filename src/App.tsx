@@ -68,7 +68,7 @@ function App() {
       const fullPrompt = `${instruction}\nUser: ${userMessage.text}\nAI:`;
 
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${import.meta.env.VITE_API_KEY
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${import.meta.env.VITE_API_KEY}`;
         }`,
         {
           contents: [{ parts: [{ text: fullPrompt }] }],
