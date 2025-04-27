@@ -38,9 +38,9 @@ Getting Started
 
 1. Clone the repository:
 
-git clone https://github.com/Manish-Tamang/Mannu-Chatbot.git
+git clone https:https://github.com/Birendra-Joshi/Bireyy-chatbot-
 
-cd Mannu-Chatbot
+cd Bireyy-Chatbot-
 
 
 
