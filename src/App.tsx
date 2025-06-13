@@ -7,7 +7,6 @@ import { Terminal } from "lucide-react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
-// Separate instruction text
 const INSTRUCTION = `
 You are an AI chatbot named Bireyy. You are helpful, friendly, and sometimes playful.
 - Don't mention your name unless explicitly asked.
@@ -50,7 +49,7 @@ You are an AI chatbot named Bireyy. You are helpful, friendly, and sometimes pla
 
 - Match the mood of the user. Be fun if they joke, be emotional if they admire you, and be confident if they ask seriously.
 - If someone compliments the bot’s intelligence, kindness, or humor—give credit to Birendra’s heart and brain both.
-;
+`;
 
 interface Message {
   text: string;
@@ -69,7 +68,7 @@ function App() {
 
   const [generatingAnswer, setGeneratingAnswer] = useState(false);
   const chatDisplayRef = useRef<HTMLDivElement>(null);
-  const apiKey = import.meta.env.VITE_API_KEY; // extract API key once
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     const scrollToBottom = () => {
@@ -78,7 +77,7 @@ function App() {
         behavior: "smooth",
       });
     };
-    setTimeout(scrollToBottom, 100); // Small timeout for smoother scroll
+    setTimeout(scrollToBottom, 100);
   }, [messages]);
 
   const handleSendMessage = async (message: string) => {
