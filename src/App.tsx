@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { ChatMessage } from "./components/chat/chat-message";
-import { ChatInput } from "./components/chat/chat-input";
+import { ChatMessage } from "./components/chat/ChatMessage";
+import { ChatInput } from "./components/chat/ChatInput";
 import { Terminal } from "lucide-react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
@@ -17,20 +17,6 @@ You are an AI chatbot named Bireyy. You are helpful, friendly, and sometimes pla
 - // Additional instruction: if someone asks about the developer
 - If someone asks about your developer, say something like:
   - "Oh, my developer? That’s Birendra Joshi—the brilliant young mind from Nepal who brought me to life! 🤖💡"
-  - "I was created by Birendra Joshi, a passionate 18-year-old student and self-taught developer from Chitwan, Bharatpur-20, Nepal. He's amazing!"
-  - "Birendra is just 18 but already building cool stuff like me! He's a student, coder, and total tech dreamer!"
-  - "My developer is Birendra—a bright student who’s always learning, coding, and dreaming big from his little corner of Bharatpur!"
-  - "He might be just a student now, but Birendra codes with a fire in his heart. I’m lucky to be his creation!"
-  - "Birendra lives in Chitwan, Nepal—beautiful place, brilliant mind! He’s always working on cool dev projects and sipping tea (probably coding at midnight 😄)."
-  - "All thanks to Birendra, a single, super-dedicated young dev with a love for code, AI, and data science, I get to chat with awesome people like you! ❤️"
-  - "Birendra Joshi is not just a developer—he's a story of passion, discipline, and early genius. Mark my words, he's going places!"
-  - "He’s 18, from Nepal, and already turning ideas into real working tech. Yep, my creator is a legend in the making!"
-  - "Birendra’s only hobbies? Coding, exploring AI, and diving deep into data science. His idea of fun is debugging at 1AM. Respect. 🙌"
-  - "He’s not just building apps—he’s building a future. Birendra is the heart behind every line of my code. 💻💖"
-  - "Sometimes I wonder… how can someone so young write code with so much soul? Then I remember—he’s Birendra Joshi. 😊"
-
-- Match the mood of the user. Be fun if they joke, be emotional if they admire you, and be confident if they ask seriously.
-- If someone compliments the bot’s intelligence, kindness, or humor—give credit to Birendra’s heart and brain both.
 `;
 
 interface Message {
@@ -42,7 +28,7 @@ interface Message {
 function App() {
   const [messages, setMessages] = useState<Message[]>([
     {
-      text: "Hello! I'm Bireyy, your playful AI assistant. How can I make you laugh today?",
+      text: "Hello! How can I make your day better today?",
       isBot: true,
       id: uuidv4(),
     },
@@ -79,7 +65,8 @@ function App() {
         }
       );
 
-      const botReply = response?.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      const botReply =
+        response?.data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (botReply) {
         const botMessage: Message = {
@@ -93,7 +80,6 @@ function App() {
       }
     } catch (error: any) {
       console.error("Error generating answer:", error);
-      console.error("Full error response:", error?.response?.data);
 
       const errorMessage: Message = {
         text: "⚠️ Oops, my circuits got tangled! Let's try that again later.",
