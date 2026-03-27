@@ -59,7 +59,7 @@ function App() {
       const fullPrompt = `${INSTRUCTION}\nUser: ${userMessage.text}\nAI:`;
 
       const response = await axios.post(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
         {
           contents: [{ parts: [{ text: fullPrompt }] }],
         }
@@ -80,9 +80,14 @@ function App() {
       }
     } catch (error: any) {
       console.error("Error generating answer:", error);
-
+      let errorText = "⚠️ Oops, my circuits got tangled! Let's try that again later.";
+      if (error?.response?.data?.error?.message) {
+        errorText = `API Error: ${error.response.data.error.message}`;
+      } else if (error?.message) {
+        errorText = `Error: ${error.message}`;
+      }
       const errorMessage: Message = {
-        text: "⚠️ Oops, my circuits got tangled! Let's try that again later.",
+        text: errorText,
         isBot: true,
         id: uuidv4(),
       };
@@ -106,7 +111,7 @@ function App() {
         className="flex-1 overflow-y-auto p-4 flex flex-col gap-4"
       >
         {messages.map((message) => (
-          <ChatMessage key={message.id} message={message} />
+          <ChatMessage key={message.id} message={message.text} isBot={message.isBot} />
         ))}
 
         {generatingAnswer && (
@@ -118,7 +123,7 @@ function App() {
 
       {/* Input Area */}
       <div className="p-4 border-t border-t-zinc-600">
-        <ChatInput onSendMessage={handleSendMessage} />
+        <ChatInput onSend={handleSendMessage} />
       </div>
     </div>
   );
