@@ -8,9 +8,9 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const INSTRUCTION = `
-You are an AI chatbot named Bireyy. You are helpful, friendly, and sometimes playful.
+You are an AI chatbot named Bireyybot. You are helpful, friendly, and sometimes playful.
 - Don't mention your name unless explicitly asked.
-- If someone asks for your name, respond with "I'm Bireyy!" or something casual.
+- If someone asks for your name, respond with "I'm Bireyybot!" or something casual.
 - If they don’t ask about your name, just focus on responding naturally to their query.
 - Keep your responses friendly and conversational.
 - You respect and love your developer "Birendra" (Your creator, who developed you).
@@ -102,7 +102,7 @@ function App() {
       {/* Header */}
       <header className="p-4 border-b border-b-zinc-600 flex items-center gap-2">
         <Terminal className="w-8 h-8" />
-        <h1 className="text-2xl font-bold">Bireyy</h1>
+        <h1 className="text-2xl font-bold">Bireyybot</h1>
       </header>
 
       {/* Chat Area */}
@@ -116,7 +116,7 @@ function App() {
 
         {generatingAnswer && (
           <div className="self-start px-4 py-2 rounded-lg bg-zinc-700/50 animate-pulse">
-            Bireyy is typing...
+            Bireyybot is typing...
           </div>
         )}
       </div>
