@@ -1,0 +1,11 @@
+# netlify.toml for Bireyy-chatbot- React project
+
+[build]
+  command = "npm run build"   # command to build your React app
+  publish = "build"           # folder to publish (CRA default)
+
+# Optional: redirect all routes to index.html for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
