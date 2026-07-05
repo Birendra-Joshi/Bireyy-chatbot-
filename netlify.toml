@@ -2,7 +2,7 @@
 
 [build]
   command = "npm run build"   # command to build your React app
-  publish = "build"           # folder to publish (CRA default)
+  publish = "dist"            # folder to publish (Vite default)
 
 # Optional: redirect all routes to index.html for React Router
 [[redirects]]
