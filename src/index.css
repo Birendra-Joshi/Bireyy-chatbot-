@@ -1,51 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+    --primary: 37 99 235;
+    --primary-foreground: 248 250 252;
+    --secondary: 248 250 252;
+    --secondary-foreground: 15 23 42;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
+    --accent: 239 246 255;
+    --accent-foreground: 30 64 175;
+    --destructive: 220 38 38;
+    --destructive-foreground: 248 250 252;
+    --border: 229 231 235;
+    --input: 226 232 240;
+    --ring: 59 130 246;
     --radius: 0.75rem;
   }
- 
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --background: 2 6 23;
+    --foreground: 248 250 252;
+    --card: 15 23 42;
+    --card-foreground: 248 250 252;
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+    --primary: 59 130 246;
+    --primary-foreground: 248 250 252;
+    --secondary: 30 41 59;
+    --secondary-foreground: 248 250 252;
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184;
+    --accent: 30 64 175;
+    --accent-foreground: 239 246 255;
+    --destructive: 248 113 113;
+    --destructive-foreground: 248 250 252;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 96 165 250;
   }
 }
 
@@ -53,8 +55,15 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  ::selection {
+    background: rgba(37, 99, 235, 0.2);
+    color: #0f172a;
   }
 }
 
@@ -63,29 +72,32 @@ body {
   --scrollbar-button-color: #ffffff00;
   --show-double-buttons: none;
   --scrollbar-border-thickness: 0px;
-  --scrollbar-border-radius: 4px;
+  --scrollbar-border-radius: 999px;
   --scrollbar-width: 10px;
   --scrollbar-height: 10px;
 }
+
 body::-webkit-scrollbar {
-  width: var(--scrollbar-width, 20px);
-  height: var(--scrollbar-height, 20px);
+  inline-size: var(--scrollbar-width, 20px);
+  block-size: var(--scrollbar-height, 20px);
 }
+
 body::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-color, #ffffff00);
-  border: var(--scrollbar-border-thickness, 3px) solid
-    var(--scrollbar-border-color, rgb(255, 255, 255));
+  background: rgba(148, 163, 184, 0.35);
+  border: var(--scrollbar-border-thickness, 3px) solid transparent;
   border-radius: var(--scrollbar-border-radius, 4px);
 }
+
 body::-webkit-scrollbar-track {
   background: var(--scrollbar-track-color, #a1a1aa00);
 }
+
 body::-webkit-scrollbar-corner {
   background: var(--scrollbar-corner-color, #ffffff);
-  border: var(--scrollbar-border-thickness, 3px) solid
-    var(--scrollbar-border-color, rgb(255, 255, 255));
+  border: var(--scrollbar-border-thickness, 3px) solid transparent;
   border-radius: var(--scrollbar-border-radius, 4px);
 }
+
 body::-webkit-scrollbar-button:vertical:start:increment,
 #preview::-webkit-scrollbar-button:vertical:end:decrement,
 #preview::-webkit-scrollbar-button:horizontal:start:increment,
